@@ -9,19 +9,14 @@ const relogio = setInterval(function time() {
     const encontro = new Date("2024-11-16T23:38:00")
     const hoje = new Date()
     const tempoPassado = new Date(hoje - encontro)
-    const mesAnterior = new Date(hoje, 0)
-    const anoAtual = hoje.getFullYear()
-    const diasNoMes = new Date(anoAtual, mesAnterior, 0)
-
+    
     const segundosPassados = Math.floor(tempoPassado / 1000) % 60
     const minutosPassados = Math.floor(tempoPassado / (1000 * 60)) % 60
     const horasPassadas = Math.floor(tempoPassado / (1000 * 60 * 60)) % 24
-    const diasPassados = Math.floor(tempoPassado / (1000 * 60 * 60 * 24)) % diasNoMes
-    const mesesPassados = tempoPassado.getMonth()
-    const anosPassados = tempoPassado.getFullYear() - 1970
+    const diasPassados = Math.floor(tempoPassado / (1000 * 60 * 60 * 24)) % 30
 
-    anos.textContent = anosPassados < 10 ? `0${anosPassados}` : anosPassados
-    meses.textContent = mesesPassados < 10 ? `0${mesesPassados}` : mesesPassados
+    // anos.textContent = anosPassados < 10 ? `0${anosPassados}` : anosPassados
+    // meses.textContent = mesesPassados < 10 ? `0${mesesPassados}` : mesesPassados
     dias.textContent = diasPassados < 10 ? `0${diasPassados}` : diasPassados
     horas.textContent = horasPassadas < 10 ? `0${horasPassadas}` : horasPassadas
     minutos.textContent = minutosPassados < 10 ? `0${minutosPassados}` : minutosPassados
